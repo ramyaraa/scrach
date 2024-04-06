@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 1440px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  width: 1425px;
+  height: 137.57px;
+  background-color: blueviolet;
+}
+.gol {
+    width: 1425px;
+    height: 860px;
+    background-color: green;
+}
+footer {
+    width: 1425px;
+    height: 661.4px;
+    background-color: yellow;
+}
+
+.head1 {
+    
+    height: 45.75px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.l{
+    
+  
+    width: 583.63px;
+    height: 41.57px;
+    background-color:red;
+    text-align: center;
+    font-size: 10px
+    
+   
+}
+.a1{
+    padding:14px 0 ;
+    height: 41.57px;
+    background-color: orange;
+    margin: 0 20px;
+    
+}
+.head2{
+    background-color: antiquewhite;
+    height: 96px;
+
+}
