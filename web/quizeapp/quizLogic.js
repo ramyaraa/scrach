@@ -5,16 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
     const feedbackElement = document.getElementById('feedback');
-    if (!questionElement || !optionsElement || !feedbackElement) {
-        console.error('One or more quiz elements are missing!');
-        return; // Stop execution if elements are missing
-    }
-
+    const nextButton = document.getElementById('next-button');
+    const resetButton = document.getElementById('reset-button');
 
     function displayQuestion() {
         const currentQuestion = questions[currentQuestionIndex];
         questionElement.textContent = currentQuestion.question;
-        optionsElement.innerHTML = ''; // Clear previous options
+        optionsElement.innerHTML = '';
+        nextButton.style.display = 'none'; // Hide Next button initially
 
         currentQuestion.options.forEach(option => {
             const button = document.createElement('button');
@@ -33,17 +31,34 @@ document.addEventListener('DOMContentLoaded', function() {
             feedbackElement.textContent = 'Wrong!';
         }
 
-        // Move to the next question or end quiz
+        nextButton.style.display = 'block'; // Show Next button
+    }
+
+    nextButton.addEventListener('click', () => {
         if (currentQuestionIndex < questions.length - 1) {
             currentQuestionIndex++;
-            setTimeout(displayQuestion, 1000); // Wait for 1 second before showing the next question
+            displayQuestion();
         } else {
-            feedbackElement.textContent += " Quiz completed!";
+            feedbackElement.textContent = "Quiz completed!";
+            nextButton.style.display = 'none';
         }
-    }
+    });
+
+    resetButton.addEventListener('click', () => {
+        currentQuestionIndex = 0;
+        displayQuestion();
+        feedbackElement.textContent = '';
+    });
 
     // Function to start the quiz
     window.startQuiz = function() {
         displayQuestion();
     };
+
+    // Set a timer to move to the next question automatically after 30 seconds
+    setInterval(() => {
+        if (nextButton.style.display !== 'none') { // Only move forward if Next is visible
+            nextButton.click();
+        }
+    }, 10000); // 10 seconds
 });

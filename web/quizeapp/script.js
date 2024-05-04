@@ -36,8 +36,15 @@ function authenticateUser(username, password, type) {
         return response.json();
     })
     .then(data => {
-        document.getElementById('message').textContent = data.message;
+        const messageElement = document.getElementById('message');
+        messageElement.textContent = data.message;
+
         if (data.success) {
+            // Clear the message after 3 seconds
+            setTimeout(() => {
+                messageElement.textContent = '';
+            }, 3000);
+
             document.getElementById('auth-container').style.display = 'none';
             document.getElementById('quiz-container').style.display = 'block';
             startQuiz();  // This is where you start the quiz
