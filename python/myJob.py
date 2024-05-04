@@ -47,3 +47,4 @@ shoe_codes = read_shoe_codes_from_excel(excel_path)
 download_path = 'path_to_download_directory'
 images_paths = search_and_download_first_image(shoe_codes, download_path)
 embed_images_in_excel(excel_path, images_paths)
+source myenv/bin/activate
