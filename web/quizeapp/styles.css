@@ -1,65 +1,61 @@
-body {
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #e8f0fe; /* A soft blue background */
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: #f4f4f4;
 }
 
-#quiz-container {
-    width: 350px;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    text-align: center;
+form, #quiz-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
 }
 
-.question {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 20px; /* Space between question and options */
-}
-
-.options button {
-    display: block;
-    width: 100%;
+input, button {
     padding: 10px;
-    margin-top: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
     background-color: #007BFF;
     color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
 }
 
-.options button:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-#next-button {
-    width: 100%;
+#quiz-container button.option {
     padding: 10px;
-    margin-top: 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    margin: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#next-button:hover {
-    background-color: #218838;
+    font-size: 16px;
 }
 
 #feedback {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
+}
+#quiz-container button {
+    padding: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 16px;
+    color: green; /* default for correct answers; change to red via JS for wrong answers */
 }
