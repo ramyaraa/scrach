@@ -33,13 +33,13 @@ def search_and_download_first_image(shoe_codes, download_path):
     for code in shoe_codes:
         search_url = f'https://www.google.com/search?tbm=isch&q={code}'
         driver.get(search_url)
-        time.sleep(4)  # Increase sleep time to ensure images load
+        time.sleep(5)  # Increase sleep time to ensure images load
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(4)  # Additional wait after scrolling
+        time.sleep(5)  # Additional wait after scrolling
         images = driver.find_elements(By.CSS_SELECTOR, 'img.Q4LuWd')
         if images:
             image_url = images[0].get_attribute('src')
-            print("Found image URL:")
+            print("Found image URL:", image_url)
             filename = os.path.join(download_path, f'{code}.jpg')
             download_image(image_url, filename)
             images_paths.append(filename)
