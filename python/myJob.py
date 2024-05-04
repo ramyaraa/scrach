@@ -3,6 +3,8 @@ from selenium import webdriver
 import time
 import os
 import requests
+from openpyxl import load_workbook
+from openpyxl.drawing.image import Image
 
 def download_image(url, filename):
     response = requests.get(url)
@@ -12,6 +14,7 @@ def download_image(url, filename):
 
 def search_and_download_first_image(shoe_codes, download_path):
     driver = webdriver.Chrome()  # make sure to set path to chromedriver if not in PATH
+    images_paths = []
     for code in shoe_codes:
         search_url = f'https://www.google.com/search?tbm=isch&q={code}'
         driver.get(search_url)
@@ -21,14 +24,26 @@ def search_and_download_first_image(shoe_codes, download_path):
             image_url = images[0].get_attribute('src')
             filename = os.path.join(download_path, f'{code}.jpg')
             download_image(image_url, filename)
+            images_paths.append(filename)
+        else:
+            images_paths.append('')
     driver.quit()
+    return images_paths
 
-def read_shoe_codes_from_excel(file_path):
-    df = pd.read_excel(file_path)
-    return df['Shoe Code'].tolist()  # Adjust the column name as per your Excel file
+def embed_images_in_excel(file_path, images_paths):
+    wb = load_workbook(file_path)
+    ws = wb.active  # Assumes you're working with the first sheet
+    img_column = 'C'  # Specify the column to insert images
+    for index, img_path in enumerate(images_paths, start=2):  # Adjust start based on your Excel row start
+        if os.path.exists(img_path):
+            img = Image(img_path)
+            img.anchor = f'{img_column}{index}'  # Sets the position of the image
+            ws.add_image(img)
+    wb.save(file_path)
 
 # Example usage
-excel_path = 'path_to_your_excel_file.xlsx'  # Set this to the path of your Excel file
+excel_path = 'path_to_your_excel_file.xlsx'
 shoe_codes = read_shoe_codes_from_excel(excel_path)
-download_path = 'path_to_download_directory'  # Set this to your desired path
-search_and_download_first_image(shoe_codes, download_path)
+download_path = 'path_to_download_directory'
+images_paths = search_and_download_first_image(shoe_codes, download_path)
+embed_images_in_excel(excel_path, images_paths)
