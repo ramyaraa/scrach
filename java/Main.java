@@ -2,8 +2,17 @@ public class Main {
     public static void main(String[] args) {
         int i= 0;
         while(i<5){
-            System.out.println("hi");
-            i++;
+            Scanner sc= new Scanner(System.in);
+            int a;
+            int b;
+            int a = sc.nextInt();
+            for(;;){
+                if{
+                a =0;
+                
+                }
+            }
+
         }
 
 
