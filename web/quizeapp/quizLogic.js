@@ -2,50 +2,51 @@ document.addEventListener('DOMContentLoaded', function() {
     const quizData = new QuizDatabase();
     const questions = quizData.getQuestions();
     let currentQuestionIndex = 0;
+    let totalScore = 0; // Track the total score
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
     const feedbackElement = document.getElementById('feedback');
-    const nextButton = document.getElementById('next-button');
     const resetButton = document.getElementById('reset-button');
 
     function displayQuestion() {
-        const currentQuestion = questions[currentQuestionIndex];
-        questionElement.textContent = currentQuestion.question;
-        optionsElement.innerHTML = '';
-        nextButton.style.display = 'none'; // Hide Next button initially
+        if (currentQuestionIndex < questions.length) {
+            const currentQuestion = questions[currentQuestionIndex];
+            questionElement.textContent = currentQuestion.question;
+            optionsElement.innerHTML = '';
 
-        currentQuestion.options.forEach(option => {
-            const button = document.createElement('button');
-            button.textContent = option;
-            button.classList.add('option-button');
-            button.addEventListener('click', () => checkAnswer(option));
-            optionsElement.appendChild(button);
-        });
+            currentQuestion.options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.classList.add('option-button');
+                button.addEventListener('click', () => checkAnswer(option));
+                optionsElement.appendChild(button);
+            });
+        } else {
+            showResults();
+        }
     }
 
     function checkAnswer(selectedOption) {
         const correctAnswer = questions[currentQuestionIndex].answer;
         if (selectedOption === correctAnswer) {
-            feedbackElement.textContent = 'Correct!';
+            feedbackElement.textContent = 'Correct! +10 points';
+            totalScore += 10; // Add points for correct answer
         } else {
             feedbackElement.textContent = 'Wrong!';
         }
-
-        nextButton.style.display = 'block'; // Show Next button
+        currentQuestionIndex++; // Move to the next question
+        setTimeout(displayQuestion, 1000); // Wait for 1 second before next question
     }
 
-    nextButton.addEventListener('click', () => {
-        if (currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
-            displayQuestion();
-        } else {
-            feedbackElement.textContent = "Quiz completed!";
-            nextButton.style.display = 'none';
-        }
-    });
+    function showResults() {
+        feedbackElement.textContent = `Quiz completed! Total Score: ${totalScore}`;
+        questionElement.textContent = '';
+        optionsElement.innerHTML = '';
+    }
 
     resetButton.addEventListener('click', () => {
         currentQuestionIndex = 0;
+        totalScore = 0; // Reset the score
         displayQuestion();
         feedbackElement.textContent = '';
     });
@@ -54,11 +55,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.startQuiz = function() {
         displayQuestion();
     };
-
-    // Set a timer to move to the next question automatically after 30 seconds
-    setInterval(() => {
-        if (nextButton.style.display !== 'none') { // Only move forward if Next is visible
-            nextButton.click();
-        }
-    }, 10000); // 10 seconds
 });
