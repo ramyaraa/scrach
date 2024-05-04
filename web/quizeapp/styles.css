@@ -1,93 +1,85 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #000; /* Black background */
+    color: #0f0; /* Green text */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for that classic hacker look */
     margin: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
-#auth-container  {
-    background: white;
+#auth-container, #quiz-container {
+    background: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+    border: 1px solid #0f0; /* Green border */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 20px;
     width: 300px;
     text-align: center;
 }
+
+input[type="text"], input[type="password"] {
+    background: transparent;
+    border: 1px solid #0f0; /* Green border */
+    color: #0f0;
+    padding: 10px;
+    border-radius: 4px;
+    width: calc(100% - 22px); /* Adjust width to fit padding and borders */
+    margin-bottom: 10px;
+}
+
+#message {
+    color: #00ff00; /* Bright green for successful messages */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #003300; /* Dark green background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    position: absolute;
+    top: 10px; /* Moves the message to the top of the screen */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the message horizontally */
+    width: 90%; /* Ensures the message box is not too wide */
+    text-align: center; /* Centers the text within the box */
+}
+
 button {
-    background-color: #007BFF;
+    background-color: #003300; /* Dark green background */
     border: none;
     border-radius: 5px;
-    color: white;
+    color: #0f0; /* Green text */
     padding: 12px 20px;
     text-transform: uppercase;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s, transform 0.2s;
-    margin: 8px 0; /* Adds vertical spacing between buttons */
-    width: calc(100% - 40px); /* Ensures button width consistency */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin: 10px 0; /* Spacing between buttons */
+    width: calc(100% - 40px); /* Full width minus padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adds depth with shadow */
 }
 
 button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* Slight increase in size on hover for better feedback */
+    background-color: #005500; /* Lighter green on hover */
+    transform: scale(1.05); /* Slightly enlarges the button */
 }
 
-.option-button {
-    background: #e7e7e7;
-    color: #333; /* Ensures text is readable */
-    transition: background-color 0.3s, transform 0.2s;
+button:active {
+    background-color: #002200; /* Even darker on click */
+    transform: scale(0.97); /* Subtle shrink effect on click */
 }
 
-.option-button:hover {
-    background-color: #d6d6d6;
-    transform: scale(1.03); /* Adds a subtle scaling effect on hover */
-}
-
-#question {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-#feedback {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #28a745; /* Green for correct feedback */
+h2 {
+    color: #0f0; /* Green text */
 }
 
 #message {
-    color: #dc3545; /* Red for error messages */
-    font-weight: bold;
+    color: #f00; /* Red text for messages, stands out against the green */
+    padding: 10px;
     margin-bottom: 15px;
 }
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-#quiz-container {
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
 
-#question {
-    font-size: 22px;
-    margin-bottom: 25px;
-}
-
-#feedback {
-    margin-top: 25px;
-    padding: 10px;
-    background-color: #f8f9fa; /* Light background for the feedback area */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#quiz-container, #auth-container {
-    animation: fadeIn 0.5s ease-in-out;
+.option-button {
+    margin-top: 10px;
 }
