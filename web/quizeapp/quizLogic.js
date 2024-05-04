@@ -56,3 +56,20 @@ document.addEventListener('DOMContentLoaded', function() {
         displayQuestion();
     };
 });
+function showResults() {
+    fetch('http://localhost:3000/submit-score', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: 'User1', score: totalScore }) // Change 'User1' as needed
+    });
+    feedbackElement.textContent = `Quiz completed! Total Score: ${totalScore}`;
+    questionElement.textContent = '';
+    optionsElement.innerHTML = '';
+}
+function displayScores() {
+    fetch('http://localhost:3000/scores')
+        .then(response => response.json())
+        .then(scores => {
+            console.log(scores); // Here you'd replace this with code to display the scores on your page
+        });
+}

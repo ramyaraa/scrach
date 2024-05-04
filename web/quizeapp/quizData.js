@@ -2,14 +2,14 @@ class QuizDatabase {
     constructor() {
         this.questions = [
             {
-                question: "What is the capital of France?",
-                options: ["Paris", "London", "Berlin", "Madrid"],
-                answer: "Paris"
-            },
-            {
                 question: "What is 2+2?",
                 options: ["3", "4", "5", "6"],
                 answer: "4"
+            },
+            {
+                question: "Whose statement is this ' kura bro lera mauasta hay qashmary qomchy '",
+                options: ["dana chawrash", "3umar dababa", "mamosta pola", "all"],
+                answer: "all"
             },
             {
                 question: "Which planet is known as the Red Planet?",
@@ -17,9 +17,9 @@ class QuizDatabase {
                 answer: "Mars"
             },
             {
-                question: "What year did the Titanic sink?",
-                options: ["1912", "1905", "1898", "1923"],
-                answer: "1912"
+                question: "what do you have for the person who created this website",
+                options: ["thanks", "keep going", "long live", "ay dasxush"],
+                answer: "ay dasxush"
             }
         ];
     }
