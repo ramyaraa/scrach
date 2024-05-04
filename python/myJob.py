@@ -1,3 +1,4 @@
+import pandas as pd
 from selenium import webdriver
 import time
 import os
@@ -10,7 +11,6 @@ def download_image(url, filename):
             f.write(response.content)
 
 def search_and_download_first_image(shoe_codes, download_path):
-    # Setup the driver
     driver = webdriver.Chrome()  # make sure to set path to chromedriver if not in PATH
     for code in shoe_codes:
         search_url = f'https://www.google.com/search?tbm=isch&q={code}'
@@ -23,7 +23,12 @@ def search_and_download_first_image(shoe_codes, download_path):
             download_image(image_url, filename)
     driver.quit()
 
-# Example list of shoe codes and download directory
-shoe_codes = ['12345', '67890', 'ABCDE']
+def read_shoe_codes_from_excel(file_path):
+    df = pd.read_excel(file_path)
+    return df['Shoe Code'].tolist()  # Adjust the column name as per your Excel file
+
+# Example usage
+excel_path = 'path_to_your_excel_file.xlsx'  # Set this to the path of your Excel file
+shoe_codes = read_shoe_codes_from_excel(excel_path)
 download_path = 'path_to_download_directory'  # Set this to your desired path
 search_and_download_first_image(shoe_codes, download_path)
