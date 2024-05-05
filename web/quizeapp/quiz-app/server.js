@@ -1,5 +1,5 @@
 // Import the express library
-const express = require('express');
+import express, { json } from 'express';
 
 // Create an express application
 const app = express();
@@ -8,7 +8,7 @@ const app = express();
 const PORT = 3000;
 
 // Middleware to parse JSON bodies (this is required for POST requests)
-app.use(express.json());
+app.use(json());
 
 // Define a route for GET requests to the root URL ('/')
 app.get('/', (req, res) => {
