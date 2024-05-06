@@ -52,8 +52,8 @@ def search_and_download_first_image(shoe_codes, download_path):
 def embed_images_in_excel(file_path, images_paths):
     wb = load_workbook(file_path)
     ws = wb.active  # Assumes you're working with the first sheet
-    img_column = 'A'  # Specify the column to insert images
-    for index, img_path in enumerate(images_paths, start=2):  # Start from row 2
+    img_column = 'D'  # Specify the column to insert images
+    for index, img_path in enumerate(images_paths, start=1767):  # Start from row 2
         if os.path.exists(img_path):
             img = Image(img_path)
             img.anchor = f'{img_column}{index}'  # Sets the position of the image
@@ -72,7 +72,7 @@ def read_shoe_codes_from_excel(file_path):
 
 
 # Example usage
-excel_path = '/Users/adam/Desktop/test.xlsx'
+excel_path = '/Users/adam/Desktop/hi.xlsx'
 shoe_codes = read_shoe_codes_from_excel(excel_path)
 download_path = '/Users/adam/Desktop'
 images_paths = search_and_download_first_image(shoe_codes, download_path)

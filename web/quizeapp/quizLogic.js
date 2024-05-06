@@ -6,15 +6,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
     const feedbackElement = document.getElementById('feedback');
+    const timerElement = document.getElementById('timer');
     const resetButton = document.getElementById('reset-button');
-    let answerTimeout;
+    let answerTimeout, countdownInterval;
 
     function displayQuestion() {
-        clearTimeout(answerTimeout); // Clear any existing timers
+        clearTimeout(answerTimeout);
+        clearInterval(countdownInterval);
         if (currentQuestionIndex < questions.length) {
             const currentQuestion = questions[currentQuestionIndex];
             questionElement.textContent = currentQuestion.question;
             optionsElement.innerHTML = '';
+            let timeLeft = 15;
+            timerElement.textContent = `Time left: ${timeLeft}s`;
+
+            countdownInterval = setInterval(() => {
+                timeLeft -= 1;
+                timerElement.textContent = `Time left: ${timeLeft}s`;
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    showCorrectAnswer(currentQuestion.answer);
+                }
+            }, 1000);
+
             currentQuestion.options.forEach(option => {
                 const button = document.createElement('button');
                 button.textContent = option;
@@ -22,15 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.addEventListener('click', () => checkAnswer(option, false));
                 optionsElement.appendChild(button);
             });
-            // Set a timer for the question
-            answerTimeout = setTimeout(() => showCorrectAnswer(currentQuestion.answer), 15000);
         } else {
             showResults();
         }
     }
 
     function checkAnswer(selectedOption, timeout = false) {
-        clearTimeout(answerTimeout); // Stop the timer as the user has answered
+        clearTimeout(answerTimeout);
+        clearInterval(countdownInterval);
         const correctAnswer = questions[currentQuestionIndex].answer;
         if (selectedOption === correctAnswer) {
             feedbackElement.textContent = 'Correct! +10 points';
@@ -38,21 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             feedbackElement.textContent = 'Wrong!';
         }
-        if (!timeout) {
-            currentQuestionIndex++;
-            setTimeout(displayQuestion, 1000); // Move to next question after 1 second
-        }
-    }
-
-    function showCorrectAnswer(correctAnswer) {
-        optionsElement.querySelectorAll('.option-button').forEach(button => {
-            if (button.textContent === correctAnswer) {
-                button.style.backgroundColor = 'green'; // Highlight correct answer
-            }
-        });
-        feedbackElement.textContent = 'Time up! Moving to next question...';
         currentQuestionIndex++;
-        setTimeout(displayQuestion, 3000); // Move to next question after 3 seconds
+        setTimeout(displayQuestion, 1000); // Move to next question after 1 second
     }
 
     function showResults() {

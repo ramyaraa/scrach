@@ -1,46 +1,81 @@
+/* General Body and Layout Styling */
 body {
-    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Sleek gradient background */
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Container for Authentication and Quiz */
+#auth-container, #quiz-container {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white for a frosted glass look */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    padding: 20px;
+    width: 90%;
+    max-width: 500px; /* Maximum width for larger screens */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+/* Styling for Headings */
+h2 {
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+/* Input Fields Styling */
+input[type="text"], input[type="password"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+/* Button Styling */
+button {
+    background-color: #0084ff; /* Bright blue */
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 5px 0;
+    width: 100%;
 }
 
-header {
-    background: url('header-background.jpg') no-repeat center center;
-    background-size: cover;
-    padding: 20px;
-    text-align: center;
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Scale up effect for interaction */
 }
 
-h1 {
-    font-size: 40px;
-    color: #ccc;
-    text-shadow: 2px 2px #000;
+button:active {
+    transform: scale(0.95); /* Slight shrink effect on click */
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+/* Message Display Styling */
+#message {
+    padding: 10px;
+    background-color: #f44336; /* Red background for message */
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+/* Option Buttons Styling in Quiz */
+.option-button {
+    background-color: #ffffff; /* White background for option buttons */
+    color: #333; /* Dark text for readability */
+    margin-top: 10px;
 }
-
-nav ul li a {
-    color: #ccc;
-    text-decoration: none;
-}
-
-.main-content {
-    padding: 20px;
-    border-top: 1px solid gray;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-}
-
-/* Add any specific styles for distressed or grungy looks */

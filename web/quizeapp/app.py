@@ -1,6 +1,16 @@
 from flask import Flask, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_cors import CORS  # Make sure CORS is handled if you haven't already set this up
+from flask import Flask, jsonify, request
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+db = SQLAlchemy(app)
+
+from flask import Flask, request, jsonify
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_cors import CORS  # Make sure CORS is handled if you haven't already set this up
 
 app = Flask(__name__)
 CORS(app)
@@ -27,3 +37,4 @@ def signup():
 
 if __name__ == '__main__':
     app.run(debug=True)
+

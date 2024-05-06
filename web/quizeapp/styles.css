@@ -1,85 +1,99 @@
+/* General Body and Layout Styling */
 body {
-    background-color: #000; /* Black background */
-    color: #0f0; /* Green text */
-    font-family: 'Courier New', Courier, monospace; /* Monospace font for that classic hacker look */
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Soft light blue background */
+    color: #083561; /* Dark blue text for good readability */
     margin: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
-}
-
-#auth-container, #quiz-container {
-    background: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
-    border: 1px solid #0f0; /* Green border */
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
     text-align: center;
 }
 
-input[type="text"], input[type="password"] {
-    background: transparent;
-    border: 1px solid #0f0; /* Green border */
-    color: #0f0;
-    padding: 10px;
-    border-radius: 4px;
-    width: calc(100% - 22px); /* Adjust width to fit padding and borders */
-    margin-bottom: 10px;
+/* Container for Authentication and Quiz */
+#auth-container, #quiz-container {
+    background: #ffffff; /* Crisp white background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 50, 0.2); /* Soft shadow for depth */
+    padding: 20px;
+    width: 90%;
+    max-width: 500px; /* Maximum width for larger screens */
+    margin: 10px; /* Outer spacing */
 }
 
-#message {
-    color: #00ff00; /* Bright green for successful messages */
+/* Styling for Headings */
+h2 {
+    color: #0456a4; /* Slightly darker blue for headings */
+    margin-bottom: 20px;
+}
+
+/* Input Fields Styling */
+input[type="text"], input[type="password"], input[type="email"] {
+    width: calc(100% - 20px); /* Full width minus padding */
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
-    background-color: #003300; /* Dark green background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-    position: absolute;
-    top: 10px; /* Moves the message to the top of the screen */
-    left: 50%;
-    transform: translateX(-50%); /* Centers the message horizontally */
-    width: 90%; /* Ensures the message box is not too wide */
-    text-align: center; /* Centers the text within the box */
+    border: 1px solid #0456a4; /* Border color matching headings */
+    background: #ffffff; /* White background for input fields */
+    color: #083561;
 }
 
+/* Button Styling */
 button {
-    background-color: #003300; /* Dark green background */
+    background-color: #007bff; /* Vibrant blue */
+    color: white;
     border: none;
     border-radius: 5px;
-    color: #0f0; /* Green text */
-    padding: 12px 20px;
-    text-transform: uppercase;
+    padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-    margin: 10px 0; /* Spacing between buttons */
-    width: calc(100% - 40px); /* Full width minus padding */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adds depth with shadow */
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px 0;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #005500; /* Lighter green on hover */
-    transform: scale(1.05); /* Slightly enlarges the button */
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Scale up effect for interaction */
 }
 
 button:active {
-    background-color: #002200; /* Even darker on click */
-    transform: scale(0.97); /* Subtle shrink effect on click */
+    background-color: #003875; /* Even darker blue on click */
+    transform: scale(0.95); /* Subtle shrink effect on click */
 }
 
-h2 {
-    color: #0f0; /* Green text */
-}
-
+/* Message Display Styling */
+/* Message Display Styling - Moved to top and adjusted */
 #message {
-    color: #f00; /* Red text for messages, stands out against the green */
+    color: #007bff; /* Blue text for a consistent theme */
     padding: 10px;
-    margin-bottom: 15px;
+    background-color: transparent; /* Removed the background for a cleaner look */
+    position: fixed; /* Keeps it at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensures it's above other content */
 }
 
+/* Timer Display Styling */
+#timer {
+    font-size: 16px;
+    color: #ff0000; /* Red to highlight the urgency */
+    margin-top: 10px;
+}
+
+/* Top Scorer Display Styling */
+#top-scorer {
+    font-size: 16px;
+    color: #007bff; /* Consistent blue theme */
+    margin-top: 10px;
+}
+
+/* Option Buttons Styling in Quiz */
 .option-button {
+    background-color: #ffffff; /* White background for option buttons */
+    color: #007bff; /* Blue text for contrast */
     margin-top: 10px;
 }
