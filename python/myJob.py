@@ -52,7 +52,7 @@ def search_and_download_first_image(shoe_codes, download_path):
 def embed_images_in_excel(file_path, images_paths):
     wb = load_workbook(file_path)
     ws = wb.active  # Assumes you're working with the first sheet
-    img_column = 'D'  # Specify the column to insert images
+    img_column = 'B'  # Specify the column to insert images
     for index, img_path in enumerate(images_paths, start=1767):  # Start from row 2
         if os.path.exists(img_path):
             img = Image(img_path)
@@ -64,12 +64,12 @@ def embed_images_in_excel(file_path, images_paths):
 
 def read_shoe_codes_from_excel(file_path):
     df = pd.read_excel(file_path)
-    column_name = 'Material'  # Change to your column name
+    column_name = 'productid'  # Change to your column name
     if column_name in df.columns:
-        return df[column_name].tolist()
+        # Convert the column to a set to remove duplicates, then back to a list to maintain order
+        return list(set(df[column_name].tolist()))
     else:
         raise ValueError(f"Column {column_name} not found in Excel file.")
-
 
 # Example usage
 excel_path = '/Users/adam/Desktop/hi.xlsx'
