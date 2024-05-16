@@ -1,0 +1,383 @@
+.home1 {
+    position: relative;
+    letter-spacing: 0.18em;
+}
+.home {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: var(--br-6xs);
+    height: 38px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 24px;
+    box-sizing: border-box;
+}
+.navbar {
+    position: absolute;
+    top: 60px;
+    left: 1133px;
+    width: 120px;
+    height: 38px;
+}
+.blure-icon {
+    position: absolute;
+    top: -255px;
+    left: -418px;
+    width: 2329px;
+    height: 1555px;
+}
+.frame-child {
+    position: absolute;
+    top: 10.12px;
+    left: 558.76px;
+    border-radius: 11px;
+    width: 151.9px;
+    height: 191px;
+    object-fit: contain;
+}
+.frame-item {
+    position: absolute;
+    top: 297px;
+    left: 0px;
+    border-radius: var(--br-3xs);
+    width: 196.7px;
+    height: 144.9px;
+    object-fit: contain;
+}
+.bacground {
+    position: absolute;
+    top: 3.3px;
+    left: 16.01px;
+    box-shadow: -16px -6px 150px rgba(225, 35, 254, 0.57), 16px 6px 150px rgba(41, 233, 245, 0.71);
+    backdrop-filter: blur(18px);
+    border-radius: 22px;
+    background: linear-gradient(149.97deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.15));
+    border: 1px solid var(--color-gray-200);
+    box-sizing: border-box;
+    width: 520px;
+    height: 681px;
+}
+.facebook-child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    box-shadow: 0px 2px 20px rgba(41, 233, 245, 0.2) inset;
+    border-radius: 7px;
+    background-color: #020428;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+}
+.continue-with-google {
+    position: absolute;
+    top: 28.95%;
+    left: 30.63%;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    text-transform: capitalize;
+}
+.facebook-logo-icon {
+    position: absolute;
+    height: 84.21%;
+    width: 10%;
+    top: 7.89%;
+    right: 81.88%;
+    bottom: 7.89%;
+    left: 8.13%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.facebook {
+    width: 100%;
+    position: relative;
+    height: 38px;
+    text-align: left;
+    font-size: 16px;
+    color: #eaeaea;
+    font-family: var(--font-outfit);
+}
+
+
+.continue-with-google {
+    position: absolute;
+    top: 28.95%;
+    left: 30.63%;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    text-transform: capitalize;
+}
+.facebook-logo-icon {
+    position: absolute;
+    height: 84.21%;
+    width: 10%;
+    top: 7.89%;
+    right: 81.88%;
+    bottom: 7.89%;
+    left: 8.13%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.facebook {
+    position: absolute;
+    top: 517.3px;
+    left: 119.01px;
+    width: 320px;
+    height: 38px;
+}
+.github-logo-icon {
+    position: absolute;
+    height: 78.95%;
+    width: 9.38%;
+    top: 5.26%;
+    right: 82.19%;
+    bottom: 15.79%;
+    left: 8.44%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.github {
+    position: absolute;
+    top: 461.3px;
+    left: 119.01px;
+    width: 320px;
+    height: 38px;
+}
+.frame-icon {
+    position: absolute;
+    height: 89.47%;
+    width: 10.63%;
+    top: 5.26%;
+    right: 80.94%;
+    bottom: 5.26%;
+    left: 8.44%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.google {
+    position: absolute;
+    top: 405.3px;
+    left: 119.01px;
+    width: 320px;
+    height: 38px;
+}
+.or-line-child {
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    border-radius: 70px;
+    width: 495px;
+    height: 1px;
+    object-fit: contain;
+}
+.or-line-item {
+    position: absolute;
+    top: 0px;
+    left: 232px;
+    border-radius: var(--br-6xs);
+    background-color: #010324;
+    width: 32px;
+    height: 18px;
+}
+.or {
+    position: absolute;
+    top: 2px;
+    left: 238px;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    text-transform: capitalize;
+    font-weight: 100;
+}
+.or-line {
+    position: absolute;
+    top: 343.3px;
+    left: 28.01px;
+    width: 495px;
+    height: 18px;
+    font-size: var(--font-size-smi);
+    color: var(--color-white);
+}
+.pass-icon {
+    position: absolute;
+    height: 63.89%;
+    width: 6.16%;
+    top: 11.11%;
+    right: 93.84%;
+    bottom: 25%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.passowrd-child {
+    position: absolute;
+    height: 100%;
+    width: 90.91%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 9.09%;
+    border-radius: var(--br-6xl);
+    border: 1px solid var(--color-gray-300);
+    box-sizing: border-box;
+}
+.password1 {
+    position: relative;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    text-transform: capitalize;
+    font-weight: 100;
+}
+.password {
+    position: absolute;
+    height: 36.11%;
+    width: 18.18%;
+    top: 27.78%;
+    right: 66.86%;
+    bottom: 36.11%;
+    left: 14.96%;
+    background-color: var(--color-gray-400);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px var(--padding-9xs);
+    box-sizing: border-box;
+}
+.passowrd {
+    position: absolute;
+    top: 202.3px;
+    left: 98.01px;
+    width: 341px;
+    height: 36px;
+    font-size: var(--font-size-smi);
+    color: var(--color-white);
+}
+.face-icon {
+    position: absolute;
+    height: 51.94%;
+    width: 4.56%;
+    top: 16.67%;
+    right: 95.44%;
+    bottom: 31.39%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.username-child {
+    position: absolute;
+    height: 100%;
+    width: 91.72%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 8.28%;
+    border-radius: var(--br-6xl);
+    border: 1px solid var(--color-gray-300);
+    box-sizing: border-box;
+}
+.username1 {
+    position: absolute;
+    height: 36.11%;
+    width: 18.93%;
+    top: 30.56%;
+    right: 66.86%;
+    bottom: 33.33%;
+    left: 14.2%;
+    border-radius: 5px;
+    background-color: var(--color-gray-400);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px var(--padding-9xs);
+    box-sizing: border-box;
+}
+.username {
+    position: absolute;
+    top: 148.3px;
+    left: 101.01px;
+    width: 338px;
+    height: 36px;
+    font-size: var(--font-size-smi);
+    color: var(--color-white);
+}
+.background {
+    position: absolute;
+    top: 60.7px;
+    left: 110.99px;
+    width: 538.1px;
+    height: 722.3px;
+}
+.frame-inner {
+    position: absolute;
+    top: 439px;
+    left: 594px;
+    border-radius: var(--br-3xs);
+    width: 106.4px;
+    height: 105.4px;
+    object-fit: contain;
+}
+.polygon-icon {
+    position: absolute;
+    top: 699px;
+    left: 115px;
+    border-radius: var(--br-3xs);
+    width: 137.7px;
+    height: 104px;
+    object-fit: contain;
+}
+.frame-child1 {
+    position: absolute;
+    top: 0px;
+    left: 40.11px;
+    border-radius: var(--br-3xs);
+    width: 177.2px;
+    height: 168.6px;
+    object-fit: contain;
+}
+.login {
+    position: absolute;
+    top: 104.7px;
+    left: 333.99px;
+    font-size: 39px;
+    letter-spacing: 0.05em;
+    line-height: 100%;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--color-white);
+}
+.vector-parent {
+    position: absolute;
+    top: 149px;
+    left: 332px;
+    width: 710.7px;
+    height: 803px;
+    font-size: var(--font-size-base);
+    color: var(--color-whitesmoke);
+}
+.desktop-2 {
+    width: 100%;
+    position: relative;
+    background-color: #000235;
+    height: 2562px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 22px;
+    color: var(--color-white);
+    font-family: var(--font-outfit);
+}
+
