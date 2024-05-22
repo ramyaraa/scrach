@@ -1,0 +1,27 @@
+
+
+guests = ['san','aland','hardi']
+print(guests)
+i=0
+j=0
+notCome = 'hardi'
+come = 'ammar'
+guests.remove('hardi')
+guests.insert(0,'ahmad')
+guests.insert(0,'azad')
+guests.append('ammar')
+print(guests)
+for guest in guests:
+      print(f"hy {guests[i]}, would you like to join for dinner")
+      i += 1
+
+print("sorry i can only invite tow people to dinner")
+print(len(guests))
+for guest in guests:
+      guests.pop()
+      if guests ==2:
+            break
+
+for guest in guests:
+      print(f"hy {guests[j]}, would you like to join for dinner")
+      j += 1

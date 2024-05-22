@@ -21,8 +21,7 @@ public class test {
         //       }           
         //       }
         //       System.out.println(" ");
-        //   }
-      
+        //   }  
         
         //dimond 
         // for (int i=0 ; i<row ;i++){

@@ -1,0 +1,6 @@
+cars = ['bmw','bntle','mazda']
+print(f"my vavorate car is : {cars[0].title()}")
+print(f"my vavorate car is : {cars[1].title()}")
+print(f"my vavorate car is : {cars[2].title()}")
+del cars[0]
+print(f"my vavorate car is : {cars}")
