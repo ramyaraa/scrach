@@ -3,6 +3,7 @@
 # from openpyxl import workbook, load_workbook
 
 # # first you nedd close excel if you don't you face on error
+# # also if you have excel file use load_workbook if you don't use workbook()
 # wb = load_workbook("/Users/adam/Desktop/scrach/python/job/one_for_all/learn/test.xlsx") # path of excel file
 # ws = wb.active # open active sheet  ws = work sheet
 # print(ws)   # name of active sheet
@@ -21,13 +22,22 @@
 
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      second ex        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# warring W in workbook import is capital
-from openpyxl import  Workbook,load_workbook
 
-# create new work book and new sheet also name it ans some things
-wb = Workbook() # create new workbook
-ws = wb.active # open active book
-ws.title = 'firstSheet' # change name of worksheet to firstsheet
+# # warring W in workbook import is capital
+# from openpyxl import  Workbook,load_workbook
 
-ws.append(['name','age','mony','salary']) # adding this itme to first row
-wb.save("temp.xlsx")
+# # create new work book and new sheet also name it ans some things
+# wb = Workbook() # create new workbook
+# ws = wb.active # open active book
+# ws.title = 'firstSheet' # change name of worksheet to firstsheet
+
+# ws.append(['name','age','mony','salary']) # adding this itme to first row
+# ws.append(['name','age','mony','salary']) # adding this itme to second row
+# wb.save("temp.xlsx")
+
+
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%      third ex        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+from openpyxl import Workbook,load_workbook
+
+
