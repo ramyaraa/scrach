@@ -50,8 +50,8 @@ def open_google_search(query):
 def main():
     api_key = 'AIzaSyBz8QsINjrj6-02_uqbgx8bOkyLmzQd820'
     cse_id = '5750782712c5c49ee'
-    df = pd.read_excel('/Users/adam/Desktop/hi.xlsx')  # Path to your Excel file
-    shoe_codes = df['productid'].tolist()  # Adjust the column name as needed
+    df = pd.read_excel('/Users/adam/Desktop/scrach/good.xlsx')  # Path to your Excel file
+    shoe_codes = df['Description'].tolist()  # Adjust the column name as needed
 
     for code in shoe_codes:
         print(f"Searching and downloading for shoe code: {code}")
